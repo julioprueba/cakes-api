@@ -3,6 +3,8 @@ import { Cake } from '../../../../src/BoundedContext/Cakes/domain/Cake';
 import { CakeToCreate } from '../../../../src/BoundedContext/Cakes/domain/CakeToCreate';
 
 export class CakeRepositoryMock implements CakeRepository {
+    // TODO: implementar el mock para el resto de métodos para usarlo como doble del repositorio
+    // y ganar velocidad en el testing
     private mockSave = jest.fn();
 
     async save(cakeToCreate: CakeToCreate): Promise<Cake> {

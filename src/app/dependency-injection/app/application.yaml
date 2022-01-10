@@ -5,4 +5,4 @@ services:
 
     App.controllers.CakePutController:
         class: ../../controllers/CakePutController
-        arguments: ['']
+        arguments: ['@Cakes.application.CakeUpdater']

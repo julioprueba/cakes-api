@@ -31,8 +31,9 @@ export class MariadbCakeRepository implements CakeRepository {
     }
 
     async update(cake: Cake): Promise<void> {
-        // TODO: implementar
-        throw new Error('Method not implemented.');
+        const conn = await this.pool.getConnection();
+        await conn.query(`UPDATE cakes SET cakes.name = '${cake.name}', cakes.img = '${cake.img}' WHERE cakes.id = ${cake.id};`);
+        conn.end();
     }
 
     async delete(id: number): Promise<void> {
