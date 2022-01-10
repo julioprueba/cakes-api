@@ -29,5 +29,6 @@ BeforeAll(async () => {
 });
 
 AfterAll(async () => {
+    // TODO: truncate db
     await application.stop();
 });
