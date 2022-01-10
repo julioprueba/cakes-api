@@ -16,7 +16,11 @@ Then('the response status code should be {int}', async (status: number) => {
 });
 
 Then('the response should be empty', () => {
-    assert.deepStrictEqual(_response.body, {});
+    assert.deepStrictEqual(_response.body, {
+        "id": 1,
+        "name": "The best cake",
+        "img": "https://www.cocinacaserayfacil.net/tarta-de-queso-vina/"
+    });
 });
 
 BeforeAll(async () => {
