@@ -1,3 +1,7 @@
+import { CakeCreator } from '../../../src/BoundedContext/Cakes/application/CakeCreator';
+import { CakeRepository } from '../../../src/BoundedContext/Cakes/domain/CakeRepository';
+import { CakeToCreate } from '../../../src/BoundedContext/Cakes/domain/CakeToCreate';
+
 describe('CakeCreator', () => {
   it('should create a valid cake', async () => {
     const repository: CakeRepository = {
