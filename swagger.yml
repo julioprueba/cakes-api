@@ -1,0 +1,146 @@
+openapi: '3.0.0'
+info:
+    version: '1.0.0'
+    title: 'Cakes API'
+    description: 'Cakes API'
+servers:
+    - url: https://api.example.com/
+      description: Optional server description, e.g. Main (production) server
+    - url: https://staging-api.example.com
+      description: Optional server description, e.g. Internal staging server for testing
+paths:
+    /cakes:
+        get:
+            summary: 'Get Cakes'
+            responses:
+                '200':
+                    description: 'List Cakes'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CakesResponse'
+                '404':
+                    description: 'Not Found'
+                '500':
+                    description: 'Internal Server Error'
+    /cakes /{id}:
+        get:
+            summary: 'Get cake'
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                      type: integer
+                      minimum: 1
+                  description: cake id
+            responses:
+                '201':
+                    description: 'Created'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CakeResponse'
+                '404':
+                    description: 'Not Found'
+                '422':
+                    description: 'Unprocessable Entity (error params)'
+                '500':
+                    description: 'Internal Server Error'
+    /cakes/:
+        post:
+            summary: 'Create cake'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/CakeParams'
+            responses:
+                '201':
+                    description: 'Created'
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CakeResponse'
+                '422':
+                    description: 'Unprocessable Entity (error params)'
+                '500':
+                    description: 'Internal Server Error'
+    /cakes/{id}:
+        put:
+            summary: 'Update cake'
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                      type: integer
+                      minimum: 1
+                  description: cake id
+            responses:
+                '201':
+                    description: 'Updated'
+                '404':
+                    description: 'Not Found'
+                '422':
+                    description: 'Unprocessable Entity (error params)'
+                '500':
+                    description: 'Internal Server Error'
+    /cakes  /{id}:
+        delete:
+            summary: 'Delete cake'
+            parameters:
+                - in: path
+                  name: id
+                  required: true
+                  schema:
+                      type: integer
+                      minimum: 1
+                  description: cake id
+            responses:
+                '201':
+                    description: 'Deleted'
+                '404':
+                    description: 'Not Found'
+                '422':
+                    description: 'Unprocessable Entity (error params)'
+                '500':
+                    description: 'Internal Server Error'
+components:
+    schemas:
+        CakeParams:
+            type: object
+            properties:
+                name:
+                    type: string
+                    example: 'The best cake'
+                img:
+                    type: string
+                    example: 'https://pathToImg'
+        CakeResponse:
+            type: object
+            properties:
+                id:
+                    type: integer
+                    example: 1
+                name:
+                    type: string
+                    example: 'the best cake'
+                img:
+                    type: string
+                    example: 'https://pathToImg'
+        CakesResponse:
+            type: array
+            items:
+                type: object
+                properties:
+                    id:
+                        type: integer
+                        example: 1
+                    name:
+                        type: string
+                        example: 'the best cake'
+                    img:
+                        type: string
+                        example: 'https://pathToImg'
