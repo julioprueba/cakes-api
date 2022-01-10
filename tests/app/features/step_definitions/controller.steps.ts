@@ -15,7 +15,7 @@ Then('the response status code should be {int}', async (status: number) => {
     _response = await _request.expect(status);
 });
 
-Then('the response should be empty', () => {
+Then('the response should be a cake', () => {
     assert.deepStrictEqual(_response.body, {
         "id": 1,
         "name": "The best cake",
