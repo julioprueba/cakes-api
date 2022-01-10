@@ -1,7 +1,11 @@
 describe('CakeCreator', () => {
   it('should create a valid cake', async () => {
     const repository: CakeRepository = {
-      save: jest.fn()
+            find: jest.fn(),
+      save: jest.fn(),
+      update: jest.fn(),
+      delete: jest.fn()
+
     };
     const creator = new CakeCreator(repository);
     const name = 'name';
