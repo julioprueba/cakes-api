@@ -1,0 +1,8 @@
+services:
+    Cakes.domain.CakeRepository:
+        class: ../../../BoundedContext/Cakes/domain/CakeRepository
+        arguments: ['']
+
+    Cakes.application.CakeCreator:
+        class: ../../../BoundedContext/Cakes/application/CakeCreator
+        arguments: ['@Cakes.domain.CakeRepository']
