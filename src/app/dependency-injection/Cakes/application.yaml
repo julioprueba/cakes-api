@@ -6,3 +6,7 @@ services:
     Cakes.application.CakeCreator:
         class: ../../../BoundedContext/Cakes/application/CakeCreator
         arguments: ['@Cakes.domain.CakeRepository']
+
+    Cakes.application.CakeUpdater:
+        class: ../../../BoundedContext/Cakes/application/CakeUpdater
+        arguments: ['@Cakes.domain.CakeRepository']

@@ -2,3 +2,7 @@ services:
     App.controllers.CakePostController:
         class: ../../controllers/CakePostController
         arguments: ['@Cakes.application.CakeCreator']
+
+    App.controllers.CakePutController:
+        class: ../../controllers/CakePutController
+        arguments: ['']
