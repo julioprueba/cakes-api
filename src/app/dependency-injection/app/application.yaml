@@ -1,4 +1,4 @@
 services:
     App.controllers.CakePostController:
         class: ../../controllers/CakePostController
-        arguments: ['']
+        arguments: ['@Cakes.application.CakeCreator']

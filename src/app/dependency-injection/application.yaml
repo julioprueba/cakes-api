@@ -1,2 +1,4 @@
 imports:
     - { resource: ./app/application.yaml }
+    - { resource: ./Cakes/application.yaml }
+

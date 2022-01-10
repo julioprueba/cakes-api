@@ -1,6 +1,6 @@
 services:
     Cakes.domain.CakeRepository:
-        class: ../../../BoundedContext/Cakes/domain/CakeRepository
+        class: ../../../BoundedContext/Cakes/infrastructure/MariadbCakeRepository
         arguments: ['']
 
     Cakes.application.CakeCreator:
