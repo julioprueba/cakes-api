@@ -24,7 +24,7 @@ Para llevar a cabo el desarrolo en máquina local utilizamos un entorno dockeriz
 
 Lo primero es instalar docker
 
--   [Dropwizard](https://www.docker.com/get-started) - Docker
+-   [Docker](https://www.docker.com/get-started)
 
 Después tendrás que hacer git clone del proyecto
 
@@ -163,4 +163,4 @@ Para documentar la API utilizamos swagger.
 
 desplegando el archivo de configuración "swagger.yml" en el editor online, se genera una interfaz amigable que documenta la API
 
--   [Dropwizard](https://swagger.io/tools/swagger-editor/) - Swagger Editor
+-   [Swagger](https://swagger.io/tools/swagger-editor/)
